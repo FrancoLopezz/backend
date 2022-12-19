@@ -1,0 +1,32 @@
+extends layout.pug 
+
+block form 
+    form(action="/products" method="post")
+        .form-group     
+            label(for='producto') Ingresa el producto 
+            input#nombre.form-control(type="text" class="form-control" #nombre name="producto" aria-describedby="producto" placeholder="Producto:")
+        .form-group     
+            label(for='precio') Ingresa el precio  
+            input#precio.form-control(type="number" class="form-control" #precio name="precio" aria-describedby="price" placeholder="Precio:")
+        .form-group     
+            label(for='url') Ingresa la url de la imagen
+            input#nombre.form-control(type="text" class="form-control" #url name="url" aria-describedby="url" placeholder="Imagen:")
+        button.btn.btn-primary(type='submit') Submit
+
+    table.table 
+    thead
+        tr
+            th(scope="col") # 
+            th(scope="col") Producto 
+            th(scope="col") Precio 
+            th(scope="col") Imagen 
+    tbody 
+        each val in productos 
+            tr
+                td(scope='row')  &#x25CF; 
+                td= val.producto
+                td= val.precio
+                td
+                    img(src= val.url)
+                    
+            

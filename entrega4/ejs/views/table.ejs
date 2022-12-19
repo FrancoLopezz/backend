@@ -1,0 +1,26 @@
+<div class="container">
+  <% if(productos.length === 0) { %>
+    <h2>No hay productos</h2>
+  <% } else { %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% productos.forEach((val, index) => { %>
+          <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= val.producto %></td>
+            <td><%= val.precio %></td>
+            <td> <img src=<%= val.url %>></td>
+          </tr>
+        <% }) %>
+      </tbody>
+  <% } %>
+  </table>
+</div>
