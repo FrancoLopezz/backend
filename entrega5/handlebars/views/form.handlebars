@@ -1,0 +1,32 @@
+<form onsubmit="return sendProducts(this)">
+    <div class="form-group">
+        <label for="producto" class="form-label">Ingresa el producto</label>
+        <input type="text" class="form-control" id="nombre" name="producto" aria-describedby="name" placeholder="Producto:">
+    </div>
+    <div class="form-group">
+        <label for="precio" class="form-label">Ingresa el precio</label>
+        <input type="number" class="form-control" id="precio" name="precio" aria-describedby="price" placeholder="Precio:">
+    </div>
+    <div class="form-group">
+        <label for="url" class="form-label">Ingresa la imagen</label>
+        <input type="text" class="form-control" id="url" name="url" aria-describedby="stock" placeholder="Imagen:">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{{#if prod includeZero=false}} 
+    <table id="table"> </table>
+{{else}}
+    <h1> No hay productos</h1> 
+{{/if}}
+
+<br>
+{{!-- CHAT --}}
+
+  <form onsubmit="return sendMessage(this)">
+    <input type="text" required id="author" name="author" placeholder="name">
+    <input type="text" required id="text" name="text" placeholder="your congratulations message">
+    <button type="submit">Submit</button>
+  </form>
+
+<div id="chatContent"></div>
